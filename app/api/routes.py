@@ -116,7 +116,7 @@ def get_user(id):
 
 
 @bp.errorhandler(404)
-def not_found(error):
+def handle_404(error):
     return jsonify({"error": "Resource not found"}), 404
 
 
@@ -241,11 +241,6 @@ def cache_info():
         )
     except Exception as e:
         return jsonify({"error": f"Could not get cache info: {str(e)}"}), 500
-
-
-@bp.errorhandler(404)
-def not_found(error):
-    return jsonify({"error": "Resource not found"}), 404
 
 
 @bp.errorhandler(400)
