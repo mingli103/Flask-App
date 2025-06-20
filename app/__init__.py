@@ -40,4 +40,4 @@ def create_app(config_name=None):
     return app
 
 
-from app import models
+from app import models  # noqa: F401
